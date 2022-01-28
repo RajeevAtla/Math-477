@@ -8,7 +8,7 @@
 There are $\pars{9-2}+1 = 8$ possible options for the first number, $2$ possible options for the second number, and $\pars{9-1}+1 = 9$ possible options for the third number.
 Multiplying these, we have $8 \cdot 2 \cdot 9 = \boxed{144}$ total options.
 
-If the first number is a $4$, then there is only 1 option for the first number.
+If the first number is a $4$, then there is only $1$ option for the first number.
 The number of options for the second and third numbers do not change.
 Therefore, there are $1 \cdot 2 \cdot 9 = \boxed{18}$ total options.
 
@@ -18,17 +18,17 @@ Therefore, there are $1 \cdot 2 \cdot 9 = \boxed{18}$ total options.
 \problem{}
 \subproblema{}
 
-There are no repeats, so there are 5 choices for the first letter, 4 choices for the second letter, 3 choices for the third letter, 2 choices for the fourth letter, and 1 choice for the fifth letter.
+There are no repeats, so there are $5$ choices for the first letter, $4$ choices for the second letter, $3$ choices for the third letter, $2$ choices for the fourth letter, and $1$ choice for the fifth letter.
 In total, that means there are $5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 5! = \boxed{120}$ different letter arrangements.
 
 \vspace{-4\parskip}
 \subproblema{}
 We note that the P and O each appear twice, and the R, S, and E each appear once.
 We assign the doubly-appearing letters first, starting with the P's.
-Of the seven letters in each arrangement, 2 must be occupied by P's, so there are
+Of the $7$ letters in each arrangement, $2$ must be occupied by P's, so there are
 $\binom{7}{2}$ possible options for this.
 There are $7-2=5$ letters left, so there must be $\binom{5}{2}$ options to choose where to put the O's.
-There are then 3 letters left in the arrangement, so there are 3 options to choose where to put the R, 2 options to choose where to put the S, and 1 option to choose where to put the E.
+There are then $3$ letters left in the arrangement, so there are $3$ options to choose where to put the R, $2$ options to choose where to put the S, and $1$ option to choose where to put the E.
 Multiplying everything out,
 \begin{align*}
   \binom{7}{2} \cdot \binom{5}{2} \cdot 3 \cdot 2 \cdot 1 &= 21 \cdot 10 \cdot 3 \cdot 2 \cdot 1 \\
@@ -40,19 +40,24 @@ Multiplying everything out,
 \problem{}
 \subproblema{}
 If the relative order doesn't matter, then each book can be treated arbitrarily, regardless of its type.
-There are 6 books in total, so there are $6! = \boxed{720}$ different ways to order the books.
+There are $6$ books in total, so there are $6! = \boxed{720}$ different ways to order the books.
 
 \vspace{-4\parskip}
 \subproblema{}
-Since there is only 1 chemistry book, and the 3 novels and 2 math books must be together, we can instead organize objects we define to be collections.
-Let the first collection be the 1 chemistry book, let the second collection be the two math books, and let the third collection be the 3 novels.
-We can then organize the collections, and there are no restrictions on the relative ordering of the collections.
-There are 3 collections, so there must be $3! = \boxed{6}$ ways to arrange the collections.
+Since there is only $1$ chemistry book, and the $3$ novels and $2$ math books must be together, we can instead organize objects we define to be collections.
+Let the first collection be the $1$ chemistry book, let the second collection be the two math books, and let the third collection be the $3$ novels.
+Within, each collection, there is only $1$ way to organize the chemistry books, $3! = 6$ ways to organize the novels, and $2! = 2$ ways to organize the math books.
+We can then organize the collections.
+There are 3 of them, so there must be $3! \cdot  = 6$ ways to arrange the collections.
+Therefore, the total number of ways to organize the books is $3! \cdot 2! \cdot 3! = \boxed{72}$.
 
 \vspace{-4\parskip}
 \subproblema{}
-Similar to the previous subproblem, the 3 novels can be treated as one collection.
-Therefore, the total number of things we need to order is the 1 collection of novels, 2 math books, and 1 chemistry book, totalling 4. There must be $4! = \boxed{24}$ ways to arrange the collections.
+Similar to the previous subproblem, the $3$ novels can be treated as one collection.
+The number of ways to organize the novels within the collection is $3! = 6$.
+On a slightly broader level, there are the collection of novels, the $2$ math books, and $1$ chemistry book.
+There are $4$ objects in total, so the number of ways to organize them is $4! = 24$.
+The total number of ways to organize the books in this way is therefore $3! \cdot 4! = \boxed{144}$.
 
 \setcounter{problem}{25}
 \problem{}

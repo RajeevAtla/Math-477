@@ -42,11 +42,15 @@ Let $\PP{r}$ be the probability that a student wears a ring, and let $\PP{n}$ be
 \setcounter{problem}{22}
 \problem{}
 
-You must go 4 steps to the right and 3 steps up to get to point $B$.
-The multiple paths are created by the way these steps are arranged.
-This is basically the same problem as the number of ways to arrange the letters in the string RRRRUUU, where R corresponds to a movement to the right and U corresponds to a movement up.
-To account for the repeated, letters we divide the factorial of the total number of letters by the factorial of the number of times a letter is repeated, for each letter.
-This means there are $\frac{7!}{4! 3!} = \boxed{35}$.
+Suppose the first die lands on $6$.
+The second die cannot possibly have a higher value, so this case contributes $0$.
+
+If the first die lands on $5$, then the second die must land on $5$ in order to have a higher value.
+This case contributes $\frac{1}{36}$.
+
+We can continue, and see that if the first die lands on $4$, $3$, $2$, or $1$, the probabilities that each case contributes is $\frac{2}{36}$, $\frac{3}{36}$, $\frac{4}{36}$, and $\frac{5}{36}$, respectively.
+
+The sum of the probability contributions is $\frac{15}{36} = \boxed{\frac{5}{12}}$.
 
 
 \end{document}

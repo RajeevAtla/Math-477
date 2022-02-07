@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage[stdmargin, noindent]{../rajeev}
+
+\begin{document}
+\setcounter{problem}{2} 
+\problem{}
+
+$EF$ is the event that the sum of the first roll is odd and in second roll, at least one die lands on 1.
+$E \cup F$ is the event that the sum of a roll is odd and one die lands on 1.
+$FG$ is the event that the first roll has at least 1 die that lands on 1 and the second roll sums to 5.
+$EF^c$ is the event that the first roll sums to an odd number and the none of the dice in the second roll land on 1.
+$EFG$ is the event that the first roll sums to an odd number, the second roll has at least one die that lands on 1, and the third roll sums to 5.
+
+\setcounter{problem}{8}
+
+\subproblema{}
+The events are mutually exclusive, so we have $\PP{A \cup B} = \PP{A} + \PP{B} = \boxed{0.8}$.
+
+\subproblema{}
+Since they are mutually exclusive, this is just the probability of $A$ occuring, which is $\boxed{0.3}$.
+
+\subproblema{}
+Since the events are mutually exclusive, they cannot both happen at once.
+Hence, the $\PP{A \cap B} = 0$.
+
+
+\setcounter{problem}{10}
+\subproblema{}
+The probability that a student wears either is the complement of the probability that they wear neither, which is $1 - 0.6 = \boxed{0.4}$.
+
+
+\subproblema{}
+
+Let $\PP{r}$ be the probability that a student wears a ring, and let $\PP{n}$ be the probability that a student wears a necklace.
+\begin{align*}
+  \PP{r \cup n} &= \PP{r} + \PP{n} - \PP{r \cap n} \\
+  \PP{r \cap n} &= \PP{r} + \PP{n} - \PP{r \cup n} \\
+                      &= 0.2 + 0.3 - 0.4 \\
+                      &= \boxed{0.1} \\
+\end{align*}
+
+\setcounter{problem}{22}
+\problem{}
+
+You must go 4 steps to the right and 3 steps up to get to point $B$.
+The multiple paths are created by the way these steps are arranged.
+This is basically the same problem as the number of ways to arrange the letters in the string RRRRUUU, where R corresponds to a movement to the right and U corresponds to a movement up.
+To account for the repeated, letters we divide the factorial of the total number of letters by the factorial of the number of times a letter is repeated, for each letter.
+This means there are $\frac{7!}{4! 3!} = \boxed{35}$.
+
+
+\end{document}

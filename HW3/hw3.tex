@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[stdmargin, noindent]{../rajeev}
+
+\begin{document} 
+\problem{}
+
+
+Let $x$ be the value of the first roll and let $y$ be the value of the second roll.
+The probability of them being the same, $\PP{x = y}$, is $\frac{1}{6}$, so $\PP{x \neq y} = \frac{5}{6}$.
+
+Moreover, we next need to calculate the probability of at least one of $x$ and $y$ being 6 and $x \neq y$.
+Note that $x$ and $y$ cannot both be equal to $6$, as they would be equal then.
+Therefore, we let $x=6$, so $y \in \set{1, 2, 3, 4, 5}$, contributing $5$ cases.
+We do the same with $y$, so we have a total probability of $\frac{10}{36} = \frac{5}{18}$.
+
+The conditional probability is therefore $\frac{\frac{5}{18}}{\frac{5}{6}} = \boxed{\frac{1}{3}}$.
+
+\setcounter{problem}{4}
+\problem{}
+
+The probability of drawing $1$ of $6$ white balls out of $15$ total balls is $\frac{6}{15}$.
+After we draw this ball, there are $5$ white balls left and $14$ total balls, making the probability of the second ball being white $\frac{5}{14}$.
+We can do the same for the black balls to get $\frac{9}{13}$ and $\frac{8}{12}$.
+Using the Law of Total Probability, we multiply these events, finding
+
+\begin{align*}
+  \pars{\frac{6}{15}} \pars{\frac{5}{14}} \pars{\frac{9}{13}} \pars{\frac{8}{12}} &= \pars{\frac{2}{5}} \pars{\frac{5}{14}} \pars{\frac{9}{13}} \pars{\frac{2}{3}} \\
+                                                                                  &= \boxed{\frac{6}{91}}
+\end{align*}
+
+\setcounter{problem}{7}
+\problem{}
+For the sake of this problem, we assume that the probability of having a girl or boy is equal: $\frac{1}{2}$.
+
+The probability that both are girls is $\pars{\frac{1}{2}}^2 = \frac{1}{4}$.
+The probability that the older is a girl is $\frac{1}{2}$.
+Therefore, the conditional probability is $\frac{\frac{1}{4}}{\frac{1}{2}} = \boxed{\frac{1}{2}}$.
+
+\setcounter{problem}{9}
+\problem{}
+
+Let $X_1, X_2, X_3$ be the events that the first, second, and third card are spades, respectively.
+We are asked to find $\PP{X_1 \vert X_2 X_3}$.
+Using the definition of conditional probability and the law of total probability,
+\begin{align*}
+  \PP{X_1 \vert X_2 X_3} &= \frac{\PP{X_1 X_2 X_3}}{\PP{X_2 X_3 }} \\
+                         &= \frac{\PP{X_1 X_2 X_3}}{\PP{X_2 X_3 \vert X_1} \PP{X_1} + \PP{X_2 X_3 \vert X_1^c} \PP{X_1^c}} \\
+                         &= \frac{\PP{X_1 X_2 X_3}}{\frac{\PP{X_1 X_2 X_3}}{\PP{X_1}} \PP{X_1} + \frac{\PP{X_1^c X_2 X_3}}{\PP{X_1^c}} \PP{X_1^c} } \\
+                         &= \frac{\PP{X_1 X_2 X_3}}{\PP{X_1 X_2 X_3} + \PP{X_1^c X_2 X_3}} \\
+                         &= \frac{\pars{\frac{13}{52}} \pars{\frac{12}{51}} \pars{\frac{11}{50}}}{\pars{\frac{13}{52}} \pars{\frac{12}{51}} \pars{\frac{11}{50}} + \pars{\frac{39}{52}} \pars{\frac{13}{51}} \pars{\frac{12}{50}}} \\
+                         &= \frac{\frac{11}{850}}{\frac{11}{850} + \frac{39}{850}} \\
+                         &= \boxed{\frac{11}{40}} \\
+\end{align*}
+
+
+\end{document}

@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage[stdmargin, noindent]{../rajeev}
+
+\begin{document} 
+\setcounter{problem}{34}
+\problem{}
+Let $N$ be the event that it is nonrainy and let $R$ be the event that it is rainy.
+Let $E$ be the event that Joe is early and let $L$ be the event that Joe is late.
+
+\subproblema{}
+
+\begin{align*}
+  \PP{E} &= \PP{E \vert R} \PP{R} + \PP{E \vert N} \PP{N} \\
+         &= \pars{1 - \PP{L \vert R}} \frac{7}{10} + \pars{1 - \PP{L \vert N}} \frac{3}{10} \\
+         &= \frac{7}{10} \cdot \frac{7}{10} + \frac{1}{10} \cdot \frac{3}{10} \\
+         &= \boxed{\frac{13}{25}} \\
+\end{align*}
+
+\subproblema{}
+\begin{align*}
+  \PP{R \vert E} &= \frac{\PP{E \vert R} \PP{R}}{\PP{E}} \\
+                 &= \frac{\pars{1 - \PP{L \vert R}} \frac{7}{10} }{\frac{13}{25}} \\
+                 &= \frac{\frac{21}{100}}{\frac{13}{25}} \\
+                 &= \boxed{\frac{21}{52}} \\
+\end{align*}
+
+
+\setcounter{problem}{39}
+\problem{}
+
+Let $W, B$ be the events of choosing a white ball and a black ball, respectively.
+Let $H, T$ be the events of the coin landing heads and tails, respectively.
+
+\begin{align*}
+  \PP{T \vert W} &= \frac{\PP{W \vert T} \PP{T}}{\PP{W}} \\
+                 &= \frac{\frac{1}{5} \cdot \frac{1}{2}}{\PP{W \vert T} \PP{T} + \PP{W \vert H} \PP{H}} \\
+                 &= \frac{\frac{1}{10}}{\frac{1}{5} \cdot \frac{1}{2} + \frac{5}{12} \cdot \frac{1}{2}} \\
+                 &= \frac{\frac{1}{10}}{\frac{1}{10} + \frac{5}{24}} \\
+                 &= \boxed{\frac{12}{37}} \\
+\end{align*}
+
+\setcounter{problem}{46}
+\problem{}
+\subproblema{}
+
+Since $B$ is only given a chance to fix it if $A$ fails, $A$ and $B$ are mutually exclusive.
+Therefore, $A \cap B = \emptyset$.
+
+\begin{align*}
+  \PP{A \cup B} &= \PP{A} + \PP{B} \\
+                &= \frac{3}{10} + \PP{B \vert A^c} \PP{A^c} \\
+                &= \frac{3}{10} + \frac{2}{5} \cdot \frac{7}{10} \\
+                &= \boxed{\frac{29}{50}} \\
+\end{align*}
+\subproblema{}
+\begin{align*}
+  \PP{\pars{B \vert A^c} \vert \pars{A \cup B}} &= \frac{\PP{\pars{B \vert A^c} \cap \pars{A \cup B}}}{\PP{A \cup B}} \\
+                                                &= \frac{\PP{B \vert A^c}}{\PP{A \cup B}} \\
+                                                &= \frac{\frac{2}{5}}{\frac{29}{50}} \\
+                                                &= \boxed{\frac{20}{29}} \\
+\end{align*}
+
+
+\setcounter{problem}{48}
+\problem{}
+Let $W$ be the event that all the balls chosen are white.
+Let $D$ be the dice value that is rolled.
+
+\begin{align*}
+  \PP{W} &= \sum \limits_{i = 1}^{i=6} \PP{W \vert D = i} \PP{D = i} \\
+         &= \frac{1}{6} \sum \limits_{i=1}^{i=6} \frac{\binom{5}{i}}{\binom{15}{i}} \\
+         &= \frac{1}{6} \pars{\frac{1}{3} + \frac{2}{21} + \frac{2}{91} + \frac{1}{273} + \frac{1}{3003} + 0} \\
+         &= \boxed{\frac{5}{66}} \\
+\end{align*}
+
+\begin{align*}
+  \PP{D = 3 \vert W} &= \frac{\PP{W \vert D = 3} \PP{D = 3}}{\PP{W}} \\
+                     &= \frac{\frac{1}{6} \cdot \frac{2}{91}}{\frac{5}{66}} \\
+                     &= \boxed{\frac{22}{455}} \\
+\end{align*}
+
+\end{document}

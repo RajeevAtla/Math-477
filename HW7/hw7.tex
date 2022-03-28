@@ -1,0 +1,96 @@
+\documentclass{article}
+\usepackage[stdmargin, noindent]{../rajeev}
+
+\begin{document}
+
+\begin{center}
+  \Large HW 7
+\end{center}
+
+
+\setcounter{problem}{38}
+\problem{}
+
+We must first solve for $\EE{X^2}$.
+\begin{align*}
+  \EE{X^2} - \EE{X}^2 &= \var{X} \\
+  \EE{X^2} - 1 &= 5 \\
+  \EE{X^2} &= 6 \\
+\end{align*}
+
+\subproblema{}
+We use linearity of expectation, finding
+\begin{align*}
+  \EE{\pars{2+X}^2} &= \EE{4 + 4X + X^2} \\
+                    &= 4 + 4 \EE{X} + \EE{X^2} \\
+                    &= \boxed{14} \\
+\end{align*}
+
+\subproblema{}
+We use the formula for variance and then linearity of expectation, finding
+\begin{align*}
+  \var{4+3X} &= \EE{\pars{4+3X}^2} - \EE{4+3X}^2 \\
+             &= \EE{16 + 24 X + 9 X^2} - \pars{4 + 3}^2 \\
+             &= 16 + 24 + 54 - 49 \\
+             &= \boxed{45} \\
+\end{align*}
+
+\problem{}
+Let $X$ be a binomially-distributed random variable,
+that tells us the number of white balls drawn from the urn.
+Then,
+\begin{align*}
+  \PP{X = 2} &= \binom{4}{2} \pars{\frac{1}{2}}^2 \pars{\frac{1}{2}}^2 \\
+             &= \frac{6}{16} \\
+             &= \boxed{\frac{3}{8}} \\
+\end{align*}
+
+
+\setcounter{problem}{59}
+\problem{}
+Let $X$ be a random variable that represents the number of accidents that happen on a highway today.
+
+\subproblema{}
+We could directly compute this using an infinite series,
+but will instead use the principle of complements,
+finding
+\begin{align*}
+  \PP{X \geq 3} &= 1 - \PP{X < 3} \\
+                &= 1 - \PP{X = 0} - \PP{X = 1} - \PP{X = 2} \\
+                &= 1 - e^{-3} - 3 e^{-3} - \frac{9}{2} e^{-3} \\
+                &= \boxed{1 - \frac{17}{2} e^{-3}} \\
+                &\approx 0.577 \\
+\end{align*}
+
+\subproblema{}
+Here, $X$ is strictly greater than $0$.
+Therefore,
+\begin{align*}
+  \PP{X \geq 3 \vert X \geq 1} &= \frac{\PP{X \geq 3}}{\PP{X \geq 1}} \\
+                               &= \frac{1 - \frac{17}{2} e^{-3}}{1 - \PP{X = 0}} \\
+                               &= \frac{1 - \frac{17}{2} e^{-3}}{1 - 3 e^{-3}} \\
+                               &= \boxed{\frac{2e^3 - 17}{2e^3 - 6}} \\
+                               &\approx 0.678 \\
+\end{align*}
+
+
+\setcounter{problem}{62}
+\problem{}
+Let $C$ be a Poisson random variable representing the number of colds the individual has in a year.
+Let $R$ be the event that the indvidual is in the population for which $\lambda = 3$.
+$R^c$ is then the event that the individual is in the population for which $\lambda = 5$.
+We can then compute,
+using Bayes' theorem and then the law of total probability,
+\begin{align*}
+  \PP{R \vert C = 2} &= \PP{C = 2 \vert R} \frac{\PP{R}}{\PP{C = 2}} \\
+                     &= \PP{C = 2 \vert R} \frac{\PP{R}}{\PP{C = 2 \vert R} \PP{R} + \PP{C = 2 \vert R^c} \PP{R^c}} \\
+                     &= \pars{\frac{9 e^{-3}}{2}} \frac{\frac{3}{4}}{\frac{3}{4} \cdot \frac{9 e^{-3}}{2} + \frac{1}{4} \cdot \frac{25 e^{-5}}{2} } \\
+                     &= \pars{\frac{9 e^{-3}}{2}} \frac{\frac{3}{4}}{\frac{27e^{-3}}{8} + \frac{25e^{-5}}{8}} \\
+                     &= \frac{\frac{27e^{-3}}{8}}{\frac{27e^{-3}}{8} + \frac{25e^{-5}}{8}} \\
+                     &= \boxed{\frac{27e^{2}}{27 e^{2} + 25}} \\
+                     &\approx 0.889
+\end{align*}
+
+
+
+\end{document}

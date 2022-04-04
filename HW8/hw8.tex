@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage[stdmargin, noindent]{../rajeev}
+
+\begin{document}
+
+\begin{center}
+  \Large \textbf{HW 7}
+\end{center}
+
+\setcounter{problem}{65}
+
+\problem{}
+\subproblema{}
+Since $1$ person enters every $2$ minutes,
+$2.5$ people enter every $5$ minutes.
+Therefore,
+$\lambda = \frac{5}{2}$.
+Then, the probability that $x$ people enter the casino is
+
+\begin{align*}
+  \PP{x} &= \frac{\pars{\frac{5}{2}}^x e^{- \frac{5}{2}}}{x!} \\
+  \PP{0} &= \boxed{e^{-\frac{5}{2}}} \\
+         & \approx 0.0821 \\
+\end{align*}
+
+\subproblema{}
+Let $X$ be a random variable representing the number of people entering the gambling casino between 12:00 and 12:05.
+We use the method of complements.
+
+\begin{align*}
+  \PP{X \geq 4} &= 1 - \PP{X < 4} \\
+                &= 1 - \PP{0} - \PP{1} - \PP{2} - \PP{3} \\
+                &= 1 - e^{-\frac{5}{2}} - \frac{5}{2} e^{-\frac{5}{2}} - \frac{25}{8} e^{-\frac{5}{2}} - \frac{125}{48} e^{-\frac{5}{2}} \\
+                &= \boxed{1 - \frac{443}{48} e^{-\frac{5}{2}}} \\
+                & \approx 0.242 \\
+\end{align*}
+
+\setcounter{problem}{1}
+
+\problem{}
+We first find the value of $C$.
+Since the probability distribution must be normalized,
+\begin{align*}
+  \int \limits_{-\infty}^{\infty} f \pars{x}\ dx &= \int \limits_{0}^{\infty} C x e^{- \frac{x}{2}}\ dx \\
+                                                 &= 4 C \\
+                                                 &= 1 \\
+\end{align*}
+Therefore, $C = \frac{1}{4}$.
+
+
+\begin{align*}
+  \PP{X \geq 5} &= \int \limits_{5}^{\infty} \frac{1}{4} x e^{- \frac{x}{2}}\ dx \\
+                &= \boxed{\frac{7}{2} e^{- \frac{5}{2}}} \\
+                & \approx 0.287 \\
+\end{align*}
+
+
+
+\setcounter{problem}{7}
+
+\problem{}
+
+Let $X$ be a random variable representing the lifetime of the tube.
+\begin{align*}
+  \EE{X} &= \int \limits_{0}^{\infty} x^2 e^{-x}\ dx \\
+         &= \boxed{2} \\
+\end{align*}
+
+
+\setcounter{problem}{9}
+
+\problem{}
+Let $\ell$ be a random variable representing the position of the random point chosen.
+The ratio of the shorter segment to the longer segment is then,
+$\min \set{\frac{\ell}{L-\ell}, \frac{L - \ell}{L} }$.
+We then have,
+\begin{align*}
+  \frac{\ell}{L - \ell} &< \frac{1}{4} \\
+  4 \ell &< L - \ell \\
+  5 \ell &< L \\
+  \ell &< \frac{L}{5} \\
+\end{align*}
+
+\begin{align*}
+  \frac{L - \ell}{\ell} &< \frac{1}{4} \\
+  4 L - 4 \ell &< \ell \\
+  4 L &< 5 \ell \\
+  \ell &> \frac{4L}{5} \\
+\end{align*}
+
+We see that these two events are disjoint.
+The ratio between the two segments being less than $\frac{1}{4}$ is then the same as the random point being in the far left or far right fifth of the line segment.
+Therefore, the probability is
+\begin{align*}
+  \PP{\ell < \frac{L}{5}} + \PP{\ell > \frac{4L}{5}} &= \frac{1}{5} + \frac{1}{5} \\
+                                                     &= \boxed{\frac{2}{5}} \\
+\end{align*}
+
+\end{document}

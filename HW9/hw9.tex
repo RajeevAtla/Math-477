@@ -1,0 +1,145 @@
+\documentclass{article}
+\usepackage[stdmargin, noindent]{../rajeev}
+
+\begin{document}
+
+\begin{center}
+  \Large \textbf{HW 9}
+\end{center}
+
+\setcounter{problem}{1}
+\problem{}
+\subproblema{}
+
+
+\begin{center}
+  \begin{tabular}{ |c|c|c| }
+    \hline
+    $X_1$-value & \multicolumn{2}{c|}{$X_2$-value} \\
+    \hline
+    $\PP{X_1, X_2}$ & $0$ & $1$ \\
+    \hline
+    $0$ & $\frac{8}{13} \cdot \frac{7}{12} = \frac{14}{39}$ & $\frac{8}{13} \cdot \frac{5}{12} = \frac{20}{39}$ \\
+    $1$ & $\frac{5}{13} \cdot \frac{8}{12} = \frac{10}{39}$ & $\frac{5}{13} \cdot \frac{4}{12} = \frac{5}{39}$ \\
+    \hline
+  \end{tabular}
+\end{center}
+
+\subproblema{}
+\begin{center}
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    $X_1$ & $X_2$ & $X_3$ & $\PP{X_1, X_2, X_3}$ \\
+    \hline
+    0 & 0 & 0 & $\frac{8}{13} \cdot \frac{7}{12} \cdot \frac{6}{11} = \frac{28}{143}$ \\
+    1 & 0 & 0 & $\frac{5}{13} \cdot \frac{8}{12} \cdot \frac{7}{11} = \frac{70}{286}$ \\
+    1 & 1 & 0 & $\frac{5}{13} \cdot \frac{4}{12} \cdot \frac{8}{11} = \frac{40}{429}$ \\
+    1 & 1 & 1 & $\frac{5}{13} \cdot \frac{4}{12} \cdot \frac{3}{11} = \frac{5}{143}$ \\
+    0 & 1 & 1 & $\frac{8}{13} \cdot \frac{5}{12} \cdot \frac{4}{11} = \frac{40}{429}$ \\
+    1 & 0 & 1 & $\frac{5}{13} \cdot \frac{8}{12} \cdot \frac{4}{11} = \frac{40}{429}$ \\
+    0 & 1 & 0 & $\frac{8}{13} \cdot \frac{5}{12} \cdot \frac{7}{11} = \frac{70}{143}$ \\
+    0 & 0 & 1 & $\frac{8}{13} \cdot \frac{7}{12} \cdot \frac{5}{11} = \frac{70}{286}$ \\
+    \hline
+  \end{tabular}
+\end{center}
+
+
+\setcounter{problem}{7}
+\problem{}
+
+\subproblema{}
+Since the distribution must be normalized,
+\begin{align*}
+  1 &= c \int \limits_{0}^{\infty} \int \limits_{-y}^{y} \pars{y^2 - x^2} e^{-y}\ dx\ dy \\
+    &= \frac{4c}{3} \int \limits_{0}^{\infty} y^3 e^{-y}\ dy \\
+    &= 8c \\
+\end{align*}
+
+Therefore, $\boxed{c = \frac{1}{8}}$
+\subproblema{}
+By definition,
+\begin{align*}
+  f_{X} \pars{x} &= \int \limits_{-\infty}^{\infty} f \pars{x, y}\ dy \\
+                 &= \frac{1}{8} \int \limits_{\abs{x}}^{\infty} \pars{y^2 e^{-y} - x^2 e^{-y}}\ dy \\
+                 &= \frac{1}{4} \int \limits_{\abs{x}}^{\infty} y e^{-y}\ dy \\
+                 &= \frac{1}{4} \abs{x} e^{-\abs{x}} + \frac{1}{4} e^{-\abs{x}} \\
+                 &= \boxed{\frac{1}{4} \pars{\abs{x} + 1} e^{-\abs{x}}}
+\end{align*}
+Similarly,
+\begin{align*}
+  f_{Y} \pars{y} &= \frac{1}{8} \int \limits_{-y}^{y} f \pars{x, y}\ dx \\
+                 &= \boxed{\frac{1}{6} y^3 e^{-y}} \\
+\end{align*}
+Note that this is only defined when $y \geq 0$.
+When $y < 0$, $f_{Y} \pars{y} = 0$.
+
+\subproblema{}
+Using the definition of expected value,
+\begin{align*}
+  \EE{X} &= \int \limits_{0}^{\infty} \int \limits_{-y}^{y} x f \pars{x, y}\ dx\ dy \\
+         &= \int \limits_{0}^{\infty} \int \limits_{-y}^{y} x \pars{y^2 e^{-y} - x^2 e^{-y}}\ dx\ dy \\
+\end{align*}
+
+We note that $x \pars{y^2 e^{-y} - x^2 e^{-y}}$ is an odd function in $x$,
+so when integrated over symmetric bounds, the integral is 0.
+Therefore, $\boxed{\EE{X} = 0}$.
+
+\setcounter{problem}{9}
+\problem{}
+\subproblema{}
+
+By definition,
+we simply adjust the bounds of one of the definite integrals so that we only evalute over the region where $X < Y$.
+This is equivalent to saying $Y > X$,
+so we can start the integral with respect to $y$ at $x$ instead of at $0$.
+\begin{align*}
+  \PP{X < Y} &= \int \limits_{0}^{\infty} \int \limits_{x}^{\infty} e^{- \pars{x+y}}\ dy\ dx \\
+             &= \int \limits_{0}^{\infty} e^{-2x}\ dx \\
+             &= \boxed{\frac{1}{2}} \\
+\end{align*}
+This makes sense,
+because by symmetry,
+the same number of values of $x$ are less than $y$ and greater than $y$.
+
+\subproblema{}
+We can find $\PP{X < a}$ by integrating.
+\begin{align*}
+  \PP{X < a} &= \int \limits_{0}^{\infty} \int \limits_{0}^{a} e^{- \pars{x+y}}\ dx\ dy \\
+             &= \pars{1 - e^{-a}} \int \limits_{0}^{\infty} e^{-y}\ dy \\
+             &= \boxed{\pars{1 - e^{-a}}} \\
+\end{align*}
+
+\setcounter{problem}{19}
+\problem{}
+We split this problem up into two subparts,
+since each subpart is only tangentially related to the other.
+
+\subproblema{}
+We find the marginal distrubtions for each variable,
+$f_X \pars{x}$ and $f_Y \pars{y}$,
+and compare their product to the original density function.
+\begin{align*}
+  f_X \pars{x} &= \int \limits_{0}^{\infty} x e^{- \pars{x+y}}\ dy \\
+               &= x e^{-x} \\
+\end{align*}
+Similarly,
+\begin{align*}
+  f_Y \pars{y} &= \int \limits_{0}^{\infty} x e^{- \pars{x+y}}\ dx \\
+               &= e^{-y} \\
+\end{align*}
+We see that $f_X \pars{x} f_Y \pars{y} = x e^{- \pars{x+y}} = f \pars{x, y}$.
+Therefore,
+$X$ and $Y$ are independent random variables.
+
+\subproblema{}
+We find each of the marginal distributions.
+\begin{align*}
+  f_X \pars{x} &= \int \limits_{0}^{1} 2\ dy \\
+               &= 2 \\
+  f_y \pars{y} &= \int \limits_{0}^{y} 2\ dx \\
+               &= 2y \\
+\end{align*}
+We see that $f_X \pars{x} f_Y \pars{y} = 4y \neq f \pars{x, y}$.
+Therefore, $X$ and $Y$ are not independent.
+
+\end{document}

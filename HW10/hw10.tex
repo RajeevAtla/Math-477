@@ -1,0 +1,112 @@
+\documentclass{article}
+\usepackage[stdmargin, noindent]{../rajeev}
+
+\begin{document}
+
+\begin{center}
+  \Large \textbf{HW 10}
+\end{center}
+
+\setcounter{problem}{25}
+\problem{}
+\subproblema{}
+Since the random variables are independent,
+$f \pars{A < a, B < b, C < c} = f_A \pars{a} f_B \pars{b} f_C \pars{c}$.
+Therefore, is any of the marginal distributions are $0$,
+then the whole joint distribution will be $0$.
+Therefore,
+$$
+f \pars{A < a, B < b, C < c}
+\begin{cases}
+  1 & \forall k \in \set{a, b, c} : \pars{0 < k < 1} \\
+  0 & \exists k \in \set{a, b, c} : \pars{ k > 1 \lor k < 0} \\
+\end{cases}
+$$
+
+\subproblema{}
+
+We start with the law of total probability, and condition over possible values of $A$.
+Then,
+\begin{align*}
+  \PP{B^2 \geq 4 AC} =  \int \limits_{0}^{1} \PP{B^2 \geq }
+\end{align*}
+
+
+
+\setcounter{problem}{33}
+\problem{}
+
+Define $Z := X + Y$.
+Then,
+$Z$ is a normally distributed random variable with mean $20$ and variance $8$.
+Therefore,
+$\PP{X + Y > x} = \PP{Z > x}$.
+Then,
+defining $Z'$ as a standard normal variable,
+\begin{align*}
+  \PP{Z > x} &= \PP{X > 15} \\
+             &= 1 - \PP{X < 15} \\
+             &= 1 - \PP{Z' < \frac{5}{2}} \\
+  1 - \PP{Z < x} &= \\
+  1 - \PP{Z' < \frac{x - 20}{2 \sqrt{2}}} &= \\
+  \PP{Z' < \frac{x - 20}{2 \sqrt{2}}} &= \PP{Z' < \frac{5}{2}} \\
+  \frac{x - 20}{2 \sqrt{2}} &= \frac{5}{2} \\
+  x &= \boxed{20 + 5 \sqrt{2}} \\
+\end{align*}
+
+\setcounter{problem}{44}
+\problem{}
+\subproblema{}
+
+We first find $f_X \pars{x}$ and $f_Y \pars{y}$.
+
+\begin{align*}
+  f_X \pars{x} &= \int \limits_{0}^{\infty} x e^{-x \pars{y+1}}\ dy \\
+               &= e^{-x} \\
+  f_Y \pars{y} &= \int \limits_{0}^{\infty} x e^{-x \pars{y+1}}\ dx \\
+               &= \frac{1}{\pars{y+1}^2} \\
+\end{align*}
+
+Then,
+we can find the conditional densities with some ease.
+
+\begin{align*}
+  f \pars{X = x \vert Y = y} &= \frac{f \pars{X = x, Y = y}}{f_Y \pars{y}} \\
+                             &= \boxed{\frac{x}{\pars{y+1}^2} e^{-x \pars{y+1}}} \\
+  f \pars{Y = y \vert X = x} &= \frac{f \pars{X = x, Y = y}}{f_X \pars{x}} \\
+                             &= \boxed{xe^{-xy}} \\
+\end{align*}
+
+\subproblema{}
+Since $Z = XY$, the bounds of $Z$ are $0$ and $\infty$.
+
+
+\begin{align*}
+  f \pars{Z = z} &= \int \limits_{0}^{\infty} f \pars{x, \frac{z}{x}} \frac{1}{\abs{x}}\ dx \\
+                 &= \int \limits_{0}^{\infty} e^{-z - x}\ dx \\
+                 &= \boxed{e^{-z}} \\
+\end{align*}
+
+\problem{}
+Usually,
+we first find the value of $c$ by demanding that the sum of the density function over the region be equal to 1.
+However,
+we only want to find the conditional distribution,
+so the $c$ will cancel out regardless of its value.
+
+We first find the marginal distribution of $X$.
+\begin{align*}
+  f_X \pars{x} &= \int_{-x}^{x} c \pars{x^2 - y^2}\ dy \\
+               &= \frac{4}{3} c x^3 e^{-x} \\
+\end{align*}
+
+Then,
+the conditional distribution is
+
+\begin{align*}
+  f \pars{Y = y \vert X = x} &= \frac{f \pars{Y = y, X = x}}{f_X \pars{x}} \\
+                             &= \boxed{\frac{3}{4} \pars{\frac{1}{x} - \frac{y^2}{x^3}}} \\
+\end{align*}
+
+
+\end{document}
